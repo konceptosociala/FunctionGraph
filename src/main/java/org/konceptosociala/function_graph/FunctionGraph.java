@@ -1,4 +1,4 @@
-package org.konceptosociala;
+package org.konceptosociala.function_graph;
 
 import static java.lang.Math.*;
 
