@@ -4,17 +4,22 @@ import static java.lang.Math.*;
 
 import java.util.ArrayList;
 import java.awt.*;
+
 import org.knowm.xchart.XYChart;
+import org.knowm.xchart.XYSeries;
+import org.knowm.xchart.style.markers.SeriesMarkers;
 
 public class FunctionGraph extends XYChart {
 
     public FunctionGraph(Color bgColor) {
         super(0, 0);
-        addSeries("graph", new double[1], new double[1]);
         getStyler().setChartBackgroundColor(bgColor);
         getStyler().setLegendVisible(false);
         getStyler().setChartTitleVisible(false);
         getStyler().setAxisTitlesVisible(false);
+
+        XYSeries series = addSeries("graph", new double[1], new double[1]);
+        series.setMarker(SeriesMarkers.NONE);
     }
 
     public void rebuild(Params params) {

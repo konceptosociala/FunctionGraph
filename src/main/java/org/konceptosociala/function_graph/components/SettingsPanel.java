@@ -9,9 +9,9 @@ public class SettingsPanel extends JPanel {
         setBorder(new PanelBorder("Controls", 5));
         setLayout(new BorderLayout());
 
-        Box settings = Box.createVerticalBox();
+        Box box = Box.createVerticalBox();
 
-        settings.add(new ParamSpinner(
+        box.add(new ParamSpinner(
             application, 
             "Parameter a",
             "a", 
@@ -23,7 +23,7 @@ public class SettingsPanel extends JPanel {
             )
         ));
 
-        settings.add(new ParamSpinner(
+        box.add(new ParamSpinner(
             application, 
             "Parameter b", 
             "b", 
@@ -35,7 +35,7 @@ public class SettingsPanel extends JPanel {
             )
         ));
 
-        settings.add(new RangeSpinner(
+        box.add(new RangeSpinner(
             application, 
             "Min t",
             "Max t",
@@ -55,7 +55,7 @@ public class SettingsPanel extends JPanel {
             )
         ));
 
-        settings.add(new ParamSpinner(
+        box.add(new ParamSpinner(
             application, 
             "Step", 
             "step", 
@@ -67,9 +67,8 @@ public class SettingsPanel extends JPanel {
             )
         ));
 
-        add(settings, BorderLayout.NORTH);
+        add(box, BorderLayout.NORTH);
 
-        JButton saveButton = new JButton("Save image");
-        add(saveButton, BorderLayout.SOUTH);
+        add(new SaveButton("Save image", application.getChart()), BorderLayout.SOUTH);
     }
 }
