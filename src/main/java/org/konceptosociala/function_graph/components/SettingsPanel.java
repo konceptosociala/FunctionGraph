@@ -16,7 +16,7 @@ public class SettingsPanel extends JPanel {
             "Parameter a",
             "a", 
             new SpinnerNumberModel(
-                4.23, 
+                application.getParams().get("a"), 
                 null, 
                 null, 
                 0.01
@@ -28,7 +28,7 @@ public class SettingsPanel extends JPanel {
             "Parameter b", 
             "b", 
             new SpinnerNumberModel(
-                2.35, 
+                application.getParams().get("b"), 
                 null, 
                 null, 
                 0.01
@@ -42,13 +42,13 @@ public class SettingsPanel extends JPanel {
             "tMin", 
             "tMax", 
             new SpinnerNumberModel(
-                -15.0, 
+                application.getParams().get("tMin"), 
                 null, 
                 null, 
                 0.1
             ), 
             new SpinnerNumberModel(
-                20.0, 
+                application.getParams().get("tMax"), 
                 null, 
                 null, 
                 0.1
@@ -60,9 +60,9 @@ public class SettingsPanel extends JPanel {
             "Step", 
             "step", 
             new SpinnerNumberModel(
-                0.1, 
+                application.getParams().get("step").doubleValue(), 
                 0.01, 
-                10, 
+                10.0, 
                 0.01
             )
         ));
